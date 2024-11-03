@@ -1,0 +1,67 @@
+{
+	"name": "math-env",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"remoteUser": "root", // Do not change this
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"latex-workshop.latex.clean.fileTypes": [
+					"*.aux",
+					"*.bbl",
+					"*.blg",
+					"*.idx",
+					"*.ind",
+					"*.lof",
+					"*.lot",
+					"*.out",
+					"*.toc",
+					"*.acn",
+					"*.acr",
+					"*.alg",
+					"*.glg",
+					"*.glo",
+					"*.gls",
+					"*.fls",
+					"*.log",
+					"*.fdb_latexmk",
+					"*.snm",
+					"*.synctex(busy)",
+					"*.synctex.gz(busy)",
+					"*.nav",
+					"*.vrb",
+					"*.gz", // Added Manually
+					"*.bcf", // Added Manually
+					"*.nlo", // Added Manually
+					"*.run.xml" // Added Manually
+				],
+				// Edit the following property to change export directory
+				"latex-workshop.latex.outDir": "./out",
+				"latex-workshop.latex.autoClean.run": "onBuilt",
+				"latex-workshop.latex.build.forceRecipeUsage": false,
+				"latex-workshop.synctex.afterBuild.enabled": true,
+				"latex-workshop.latex.clean.subfolder.enabled": true,
+				"latex-workshop.latex.magic.args": [
+					"-output-directory=PDF", // to change the output directory
+					"%DOC%"
+				],
+				// Check the docs before changing autobuild settings
+				// https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#auto-build-latex
+				"latex-workshop.latex.autoBuild.run": "onSave",
+				"latex-workshop.latex.autoBuild.interval": 1000,
+				// Auto formatting with latexindent (already installed in image)
+				"latex-workshop.formatting.latex": "latexindent"
+			},
+			/* List of extensions to be enabled on the container */
+			"extensions": [
+				"James-Yu.latex-workshop", // Main latex extension
+				"ms-python.python", // Python support
+				"yzhang.markdown-all-in-one", // Markdown support 
+				"GitHub.copilot",
+				"ms-vsliveshare.vsliveshare"
+			]
+		}
+	}
+}
